@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrating Anshu - 1 Year at Flying Sparrow Hospitality</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #E53935, #FFA726, #E53935);
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .name {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #E53935, #FFA726);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+            letter-spacing: 2px;
+        }
+
+        .year {
+            font-size: 5em;
+            font-weight: bold;
+            color: #E53935;
+            margin: 20px 0;
+            text-shadow: 3px 3px 0 #fce4ec;
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            color: #546e7a;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .quotes-section {
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .quotes-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .quote {
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #E53935;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .quote:hover {
+            transform: translateX(10px);
+        }
+
+        .quote-text {
+            font-size: 1.2em;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .quote-author {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-align: right;
+        }
+
+        .celebrate-btn {
+            background: linear-gradient(45deg, #E53935, #FFA726);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(229, 57, 53, 0.3);
+        }
+
+        .celebrate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.4);
+        }
+
+        .message {
+            font-size: 1.2em;
+            color: #546e7a;
+            line-height: 1.8;
+            margin: 30px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #ecf0f1;
+            color: #7f8c8d;
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            z-index: 9999;
+            animation: confetti-fall 3s linear;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Celebration Message */
+        .celebration-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #E53935, #FFA726);
+            color: white;
+            padding: 40px 60px;
+            border-radius: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            z-index: 10000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            animation: pop 0.5s ease;
+        }
+
+        @keyframes pop {
+            0% { transform: translate(-50%, -50%) scale(0); }
+            80% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .instructions {
+            background: #fff3e0;
+            border: 2px solid #FFA726;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .instructions h3 {
+            color: #E53935;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .instructions code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .name {
+                font-size: 2.5em;
+            }
+            
+            .year {
+                font-size: 3.5em;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .subtitle {
+                font-size: 1.3em;
+            }
+            
+            .logo {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <!-- Replace the src with your actual logo path -->
+            <img src="flying-sparrow-logo.png" alt="Flying Sparrow Hospitality" class="logo">
+            <!-- If you don't have the image file uploaded yet, you can use this placeholder SVG instead -->
+            <!-- 
+            <svg class="logo" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 75 L100 50 L150 75 L100 100 Z" fill="#E53935"/>
+                <path d="M70 75 L100 60 L130 75 L100 90 Z" fill="#FFA726"/>
+            </svg>
+            -->
+        </div>
+        
+        <h1>Flying Sparrow Hospitality</h1>
+        
+        <div class="name">ANSHU</div>
+        
+        <div class="subtitle">Celebrating Your Journey</div>
+        
+        <div class="year">1</div>
+        
+        <div class="subtitle">YEAR OF EXCELLENCE</div>
+        
+        <div class="message">
+            Dear Anshu,<br><br>
+            Today marks a beautiful milestone in your professional journey. 
+            One year of dedication, growth, and countless moments that have shaped you into the remarkable person you are today. 
+            Your commitment to excellence and your warm spirit have made Flying Sparrow Hospitality a better place.
+        </div>
+        
+        <button class="celebrate-btn" onclick="celebrate()">
+            🎉 Click to Celebrate 🎉
+        </button>
+        
+        <div class="quotes-section">
+            <h2 class="quotes-title">✨ Wisdom for Your Journey Ahead ✨</h2>
+            
+            <div class="quote">
+                <div class="quote-text">
+                    "The future belongs to those who believe in the beauty of their dreams. Keep dreaming, keep achieving, and keep inspiring everyone around you."
+                </div>
+                <div class="quote-author">- Eleanor Roosevelt</div>
+            </div>
+            
+            <div class="quote">
+                <div class="quote-text">
+                    "Success is not final, failure is not fatal: it is the courage to continue that counts. Your first year is just the beginning of an extraordinary story."
+                </div>
+                <div class="quote-author">- Winston Churchill</div>
+            </div>
+            
+            <div class="quote">
+                <div class="quote-text">
+                    "The only way to do great work is to love what you do. Your passion for hospitality shines through in everything you touch."
+                </div>
+                <div class="quote-author">- Steve Jobs</div>
+            </div>
+            
+            <div class="quote">
+                <div class="quote-text">
+                    "Your potential is endless. Go do what you were created to do. The best chapters of your story are still being written."
+                </div>
+                <div class="quote-author">- Anonymous</div>
+            </div>
+            
+            <div class="quote">
+                <div class="quote-text">
+                    "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle."
+                </div>
+                <div class="quote-author">- Christian D. Larson</div>
+            </div>
+            
+            <div class="quote">
+                <div class="quote-text">
+                    "The expert in anything was once a beginner. Your journey from day one to today shows that greatness is built one day at a time."
+                </div>
+                <div class="quote-author">- Helen Hayes</div>
+            </div>
+            
+            <div class="quote">
+                <div class="quote-text">
+                    "Don't watch the clock; do what it does. Keep going. Time will reveal the magnificent path you're creating."
+                </div>
+                <div class="quote-author">- Sam Levenson</div>
+            </div>
+            
+            <div class="quote">
+                <div class="quote-text">
+                    "A year from now, you'll wish you had started today. But you did start, and look how far you've come! Imagine where you'll be next year."
+                </div>
+                <div class="quote-author">- Karen Lamb</div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 Implementation Instructions:</h3>
+            <ol>
+                <li><strong>Save the HTML file:</strong> Copy all this code and save it as <code>index.html</code></li>
+                <li><strong>Add the logo image:</strong> Save the Flying Sparrow logo image as <code>flying-sparrow-logo.png</code> in the same folder as your HTML file</li>
+                <li><strong>Upload to GitHub:</strong>
+                    <ul>
+                        <li>Create a new repository on GitHub</li>
+                        <li>Upload both <code>index.html</code> and <code>flying-sparrow-logo.png</code></li>
+                        <li>Go to Settings → Pages</li>
+                        <li>Select "Deploy from a branch" and choose "main" branch</li>
+                        <li>Your site will be live at: <code>https://[your-username].github.io/[repository-name]</code></li>
+                    </ul>
+                </li>
+                <li><strong>Alternative hosting:</strong> You can also open the HTML file directly in any web browser for local viewing</li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Here's to your continued success!</strong></p>
+            <p>With warm wishes from your Flying Sparrow Family</p>
+        </div>
+    </div>
+    
+    <script>
+        function celebrate() {
+            // Create confetti with brand colors
+            const colors = ['#E53935', '#FFA726', '#FF7043', '#FF5252', '#FFB74D'];
+            
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 30);
+            }
+            
+            // Show celebration message
+            const messages = [
+                "🎊 Congratulations Anshu! 🎊",
+                "🌟 Here's to Many More Years! 🌟",
+                "💫 Keep Shining Bright! 💫",
+                "🏆 One Year of Excellence! 🏆",
+                "❤️ Thank You for Being Amazing! ❤️"
+            ];
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'celebration-message';
+            messageDiv.textContent = messages[Math.floor(Math.random() * messages.length)];
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => messageDiv.remove(), 3000);
+        }
+    </script>
+</body>
+</html>
